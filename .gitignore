@@ -1,0 +1,16 @@
+*.tab.cpp
+*.tab.hpp
+*.yy.cpp
+*.got.txt
+
+bin/*
+*.o
+*.output
+*.log
+*.stackdump
+
+*.DS_Store
+
+.vagrant
+
+/1-regexes/histogram
