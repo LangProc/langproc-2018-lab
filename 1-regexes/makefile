@@ -15,6 +15,6 @@ histogram : histogram_lexer.yy.o histogram_main.o
 	g++ $(CPPFLAGS) -o histogram  histogram_lexer.yy.o histogram_main.o
 
 clean :
-	-rm histogram histogram.exe
-	-rm *.yy.cpp
-	-rm test/out/*
+	-rm -f histogram histogram.exe
+	-rm -f *.yy.cpp
+	-rm -f test/out/*
