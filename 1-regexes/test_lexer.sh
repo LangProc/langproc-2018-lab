@@ -9,7 +9,7 @@ elif which fromdos ; then
 else
     case "$(uname -s)" in
     Darwin|Linux)
-        DOS2UNIX=":"
+        DOS2UNIX="cat"
     ;;
 
     *)
@@ -20,7 +20,7 @@ else
         # The code \x0D is the ASCII code of carriage-return,
         # so it the regex should delete any CRs at the end of
         # a line (or anywhere in a line)
-        DOS2UNIX="| sed -e s/\x0D//g -"
+        DOS2UNIX="sed -e s/\x0D//g -"
 	# Tested for combinations of:
 	# - Ubuntu
 	# - Cygwin
