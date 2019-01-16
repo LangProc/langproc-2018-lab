@@ -18,7 +18,7 @@ union TokenValue{
 // attribute value from the lexer back to the
 // main program.
 // By convention it is called yylval, as that is
-// the name that will be automatially generated
+// the name that will be automatically generated
 // by Bison (see next lab).
 extern TokenValue yylval;
 
