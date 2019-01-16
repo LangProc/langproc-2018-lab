@@ -66,6 +66,24 @@ you've set up SSH authentication.
 
 You are free to include any files you wish in your repository, such as notes or partial versions. However, try not check in compiled programs or large binary files. Repositories should contains the sources and instructions for binaries, but `git` does not deal well with binary files. Most repositories should contain a [.gitignore](https://git-scm.com/docs/gitignore) file, which gives patterns for files that should not be committed. There is [one included here](.gitignore) which covers a few things, but feel free to add other temporary and binary files that your system might produce.
 
+Synchronising with the specification repository
+-----------------------------------------------
+
+If there are any changes to the specification (e.g. bugs or updates), you can incorporate them into your version by pulling again from the specification repo. First you need to make sure it is included as a "remote":
+````
+git remote add spec https://github.com/LangProc/langproc-2018-lab.git
+````
+If you now list the remotes, you should see both "origin" (your private repo), and "spec" (the specification repo):
+````
+git remote -v
+````
+You can now integrate changes from the specification repo by pulling from it:
+````
+git pull spec master
+````
+
+If you have changed a file that also changed in the specification, then you may need to commit locally first. Look carefully at any incoming changes due to the pull, and make sure you want to accept them.
+
 Submission process
 ==================
 
