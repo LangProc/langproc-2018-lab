@@ -8,7 +8,7 @@ elif which fromdos ; then
     DOS2UNIX="| fromdos"
 else
     case "$(uname -s)" in
-    Darwin)
+    Darwin|Linux)
         DOS2UNIX=""
     ;;
 
