@@ -1,3 +1,9 @@
+Recent edits:
+
+- 16-Jan-2019: added clarifications to spec; improved formatting for readability.
+
+-----
+
 Lab 1: Lexers and regular expressions
 =====================================
 
@@ -14,17 +20,17 @@ Write a tool using Flex that reads an ASCII stream of text,
 
 For our purposes we'll define words and numbers as follows:
 
-- Any contiguous sequence of lower-case or upper-case alphabetic characters is a word.
+- A **word** is any contiguous sequence of lower-case or upper-case alphabetic characters.
 
-- Any sequence of characters beginning with `[` starts a word, and the word ends at the next `]`. The word itself does not include the surrounding `[` or `]` characters. It is illegal for such a sequence to span a line-break.
+- A **word** can also be any sequence of ASCII characters beginning with `[`, and ending at the next `]`. The word itself does not include the surrounding `[` and `]` characters. You can assume that such a sequence will never span a line-break.
 
-- A number can be expressed as a decimal or as a fraction.
+- A **number** can be expressed as a decimal or as a fraction.
 
-- An decimal is a contiguous sequence of decimal digits, preceded by an optional `-` sign, and optionally followed by a `.` sign and zero or more decimal digits. It should be interpreted as a decimal double-precision number.
+- A **decimal** is a sequence of one or more decimal digits, preceded by an optional `-` sign, and optionally followed by a `.` sign and zero or more decimal digits. It should be interpreted as a decimal double-precision number.
 
-- A fraction consists of an optional leading `-` sign, a sequence of decimal digits, a `/` sign, and another sequence of decimal digits. It should be interpreted by converting the two digit sequences into decimal integers, then taking the ratio using double-precision.
+- A **fraction** consists of an optional leading `-` sign, a sequence of one or more decimal digits, a `/` sign, and another sequence of one or more decimal digits. It should be interpreted by converting the two digit sequences into decimal integers, then taking the ratio using double-precision.
   
-- Fractions with zero denominators are illegal, so implementations can handle them however is convenient, and they will not appear in any test inputs.
+- You can assume that fractions with zero denominators will not appear in any test inputs.
 
 All other characters should not be counted (and should not appear in the output).
 
