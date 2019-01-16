@@ -3,13 +3,13 @@
 # Try to find a portable way of getting rid of
 # any stray carriage returns
 if which dos2unix ; then
-    DOS2UNIX="| dos2unix"
+    DOS2UNIX="dos2unix"
 elif which fromdos ; then
-    DOS2UNIX="| fromdos"
+    DOS2UNIX="fromdos"
 else
     case "$(uname -s)" in
     Darwin|Linux)
-        DOS2UNIX=""
+        DOS2UNIX=":"
     ;;
 
     *)
@@ -52,9 +52,9 @@ for i in test/in/*.txt; do
     echo ""
     echo "Input file : ${i}"
     BASENAME=$(basename $i .txt);
-    cat $i ${DOS2UNIX} | ./histogram  > test/out/$BASENAME.stdout.txt  2> test/out/$BASENAME.stderr.txt
+    cat $i | ${DOS2UNIX} | ./histogram  > test/out/$BASENAME.stdout.txt  2> test/out/$BASENAME.stderr.txt
 
-    diff <(cat test/ref/$BASENAME.stdout.txt ${DOS2UNIX}) <(cat test/out/$BASENAME.stdout.txt) > test/out/$BASENAME.diff.txt
+    diff <(cat test/ref/$BASENAME.stdout.txt | ${DOS2UNIX}) <(cat test/out/$BASENAME.stdout.txt) > test/out/$BASENAME.diff.txt
     if [[ "$?" -ne "0" ]]; then
         echo -e "\nERROR"
     else
