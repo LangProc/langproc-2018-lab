@@ -6,7 +6,7 @@ Language and AST Overview
 
 You will parse and build the AST for standard maths notation over double-precision numbers. The constraints on the input language are:
 
-- _Operators_ to be supported are `+`, `-`, `*`, `/`, and `^` (exponentiation).
+- _Binary operators_ to be supported are `+`, `-`, `*`, `/`, and `^` (exponentiation).
 
 - Operators follow [standard mathematical precedence](https://en.wikipedia.org/wiki/Order_of_operations).
 
@@ -20,7 +20,7 @@ You will parse and build the AST for standard maths notation over double-precisi
 
 - _Variables_ are sequences of lower-case alphabetic characters.
 
-- Apart from _operators_, _numbers_, _variables_, and _functions_, the only other characters will be white-space (spaces, tabs, linebreaks).
+- Apart from _binary operators_, _numbers_, _variables_, and _functions_, the only other characters will be white-space (spaces, tabs, linebreaks).
 
 The AST is defined as a class hierarchy, spread across the following header files.
 
