@@ -42,11 +42,11 @@
 
 ROOT : EXPR { g_root = $1; }
 
-/* TODO-3 : Add support for (x+6) and (10-y). You'll need to add production rules, and create an AddOperator or
+/* TODO-3 : Add support for (x + 6) and (10 - y). You'll need to add production rules, and create an AddOperator or
             SubOperator. */
 EXPR : TERM                 { $$ = $1; }
 
-/* TODO-4 : Add support (x*6) and (z/11). */
+/* TODO-4 : Add support (x * 6) and (z / 11). */
 TERM : FACTOR               { $$ = $1; }
 
 /* TODO-2 : Add a rule for variable, base on the pattern of number. */
