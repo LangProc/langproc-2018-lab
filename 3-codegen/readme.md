@@ -87,7 +87,7 @@ Input programs can contain the following constructs:
 
 - Seq : `Seq [ X Y ... ]`
 
-  Executes `X`, then `Y`, and so on. Return value is that of the last part executed.
+  Executes `X`, then `Y`, and so on. Return value is that of the last part executed. There is always at least one operand, i.e. `Seq [ ]` is not a valid construct.
   
 - If : `If [ C X Y ]`
 
